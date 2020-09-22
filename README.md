@@ -21,3 +21,30 @@ Currently, we don't have any way to associate the two, so consider the relations
 ### Hints / Tips
 
 + Remember we want to be RESTful. What URL should show info about a particular camper? What URL should show a form to create a signup? What controller actions are associated?  
+
+
+## TODO
+
+Camper --< Signup >-- Activity
+
+Camper has_many activity through signup join table
+Vice versa for activitiy
+
+- Camper
+    - Routes: index, show, new, create
+    - Show page
+        - Link_to from the index; should show name, age and list of activities signed up for
+    - Form to create a new camper
+    - Validations: name uniqueness, age between 8 and 18
+
+- Activity
+    - Routes: index, show
+    - Show Page
+        - link_to from the index page; should show name and difficulty level
+
+- Signup
+    - Routes: new, create
+    - Form to create a signup; colelction-select from existing activities and campers
+        - Redirect_to the camper's show page
+
+ ---- Could this be built onto the a camper route??

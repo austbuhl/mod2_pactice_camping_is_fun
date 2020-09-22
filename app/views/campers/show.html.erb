@@ -1,0 +1,20 @@
+<h1><%= @camper.name %></h1>
+
+<p>Age: <%= @camper.age %></p>
+<p>Activities:</p>
+<ul>
+    <% @camper.activities.uniq.each do |activity| %>
+        <li><%= link_to activity.name, activity_path(activity) %></li>
+    <% end %>
+</ul>
+
+
+<%= button_to "Signup for Activities", signups_new_path, method: :get%>
+
+<%# form_for @camper do |f| %>
+    <%# f.fields_for :activities, @camper.activities.build do |activity_fields| %>
+        <%# activity_fields.collection_select :name, Activity.all, :name, :name %>
+    <%# end %>
+
+    <%# f.submit %>
+<%# end %>

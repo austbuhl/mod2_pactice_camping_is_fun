@@ -1,0 +1,10 @@
+<h1><%= @activity.name %></h1>
+
+<p>Difficulty Level: <%= @activity.difficulty %></p>
+
+<p>Campers:</p>
+<ul>
+    <% @activity.campers.uniq.each do |camper| %>
+        <li><%= link_to camper.name, camper_path(camper) %></li>
+    <% end %>
+</ul>
